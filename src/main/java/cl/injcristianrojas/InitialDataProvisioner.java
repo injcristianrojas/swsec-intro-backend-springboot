@@ -6,9 +6,9 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import cl.injcristianrojas.data.model.MessageJPA;
-import cl.injcristianrojas.data.model.RoleJPA;
-import cl.injcristianrojas.data.model.UserJPA;
+import cl.injcristianrojas.data.model.Message;
+import cl.injcristianrojas.data.model.Role;
+import cl.injcristianrojas.data.model.User;
 import cl.injcristianrojas.data.repositories.MessageRepository;
 import cl.injcristianrojas.data.repositories.RoleRepository;
 import cl.injcristianrojas.data.repositories.UserRepository;
@@ -47,7 +47,7 @@ public class InitialDataProvisioner implements ApplicationListener<ContextRefres
   }
 
   private void createUser(String username, String password, String rolename) {
-    UserJPA user = new UserJPA();
+    User user = new User();
 		user.setUsername(username);
 		user.setPassword(passwordEncoder.encode(password));
 		user.setRole(roleRepository.findByRolename(rolename));
@@ -56,10 +56,10 @@ public class InitialDataProvisioner implements ApplicationListener<ContextRefres
   }
 
   @Transactional
-	private RoleJPA createRoleIfNotFound(String name) {
-		RoleJPA role = roleRepository.findByRolename(name);
+	private Role createRoleIfNotFound(String name) {
+		Role role = roleRepository.findByRolename(name);
 		if (role == null) {
-			role = new RoleJPA();
+			role = new Role();
 			role.setName(name);
 			roleRepository.save(role);
 		}
@@ -67,7 +67,7 @@ public class InitialDataProvisioner implements ApplicationListener<ContextRefres
 	}
 
   private void createPost(String message) {
-		MessageJPA post = new MessageJPA();
+		Message post = new Message();
 		post.setMessage(message);
 		messageRepository.save(post);
 	}

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.injcristianrojas.data.model.MessageJPA;
+import cl.injcristianrojas.data.model.Message;
 import cl.injcristianrojas.data.repositories.MessageRepository;
 
 @RestController
@@ -20,12 +20,12 @@ public class MessageController {
   private MessageRepository messageRepo;
 
   @GetMapping("/messages")
-  public List<MessageJPA> retrieveAllMessages() {
+  public List<Message> retrieveAllMessages() {
     return messageRepo.findAll();
   }
 
   @PostMapping("/messages/add")
-  public MessageJPA newPost(@RequestBody MessageJPA newPost) {
+  public Message newPost(@RequestBody Message newPost) {
     return messageRepo.save(newPost);
   }
 

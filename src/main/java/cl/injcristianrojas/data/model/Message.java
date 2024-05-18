@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "messages")
-public class MessageJPA {
+public class Message {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

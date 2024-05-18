@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class UserJPA {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,9 @@ public class UserJPA {
     private String username;
     private String password;
     private boolean enabled = true;
-    @ManyToOne(targetEntity = RoleJPA.class)
+    @ManyToOne(targetEntity = Role.class)
     @JoinColumn(name = "role_id")
-    private RoleJPA role;
+    private Role role;
 
     public String getUsername() {
         return username;
@@ -54,11 +54,11 @@ public class UserJPA {
         this.enabled = enabled;
     }
 
-	public RoleJPA getRole() {
+	public Role getRole() {
 		return role;
 	}
 
-	public void setRole(RoleJPA role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 }

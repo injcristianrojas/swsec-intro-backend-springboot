@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import cl.injcristianrojas.data.model.UserJPA;
+import cl.injcristianrojas.data.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -17,14 +17,14 @@ public class UserRepositoryCustomImpl implements UserRepositoryCustom {
     EntityManager entityManager;
 
     @Override
-    public List<UserJPA> getUsersByUsername(String username) {
-        TypedQuery<UserJPA> query = entityManager.createQuery("from UserJPA where username = '" + username + "'", UserJPA.class);
+    public List<User> getUsersByUsername(String username) {
+        TypedQuery<User> query = entityManager.createQuery("from User where username = '" + username + "'", User.class);
         return query.getResultList();
     }
 
     @Override
-    public List<UserJPA> getUsersByType(Long type) {
-        TypedQuery<UserJPA> query = entityManager.createQuery("from UserJPA where role.id = "+ type, UserJPA.class);
+    public List<User> getUsersByType(Long type) {
+        TypedQuery<User> query = entityManager.createQuery("from User where role.id = "+ type, User.class);
         return query.getResultList();
     }
 }
