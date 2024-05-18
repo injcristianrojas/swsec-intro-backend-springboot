@@ -18,7 +18,7 @@ public class UserJPA {
     private String username;
     private String password;
     private boolean enabled = true;
-    @ManyToOne
+    @ManyToOne(targetEntity = RoleJPA.class)
     @JoinColumn(name = "role_id")
     private RoleJPA role;
 
