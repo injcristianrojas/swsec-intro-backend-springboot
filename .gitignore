@@ -1,0 +1,8 @@
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+mvnw*
+.mvn/
+
+### VS Code ###
+.vscode/
