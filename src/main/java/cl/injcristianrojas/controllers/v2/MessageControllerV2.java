@@ -1,4 +1,4 @@
-package cl.injcristianrojas.controllers.v1;
+package cl.injcristianrojas.controllers.v2;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import cl.injcristianrojas.data.model.Message;
 import cl.injcristianrojas.data.repositories.MessageRepository;
 
 @RestController
-@RequestMapping("/api/v1")
-public class MessageController {
+@RequestMapping("/api/v2")
+public class MessageControllerV2 {
 
   @Autowired
   private MessageRepository messageRepo;

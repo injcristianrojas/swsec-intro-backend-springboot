@@ -1,4 +1,4 @@
-package cl.injcristianrojas.controllers.v1;
+package cl.injcristianrojas.controllers.v2;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import cl.injcristianrojas.data.model.User;
 import cl.injcristianrojas.data.repositories.UserRepository;
 
 @RestController
-@RequestMapping("/api/v1")
-public class UserController {
+@RequestMapping("/api/v2")
+public class UserControllerV2 {
 
   @Autowired
   private UserRepository userRepo;
