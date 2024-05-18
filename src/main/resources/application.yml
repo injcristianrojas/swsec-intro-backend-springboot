@@ -1,0 +1,20 @@
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+    root: INFO
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+  jpa:
+    show-sql: TRUE
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      url: jdbc:h2:mem:testdb
+
+server:
+  port: 8080
