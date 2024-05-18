@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.injcristianrojas.data.jpa.model.MessageJPA;
-import cl.injcristianrojas.data.jpa.model.repositories.MessageRepository;
+import cl.injcristianrojas.data.model.MessageJPA;
+import cl.injcristianrojas.data.repositories.MessageRepository;
 
 @RestController
 @RequestMapping("/api/v1")

@@ -5,8 +5,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import cl.injcristianrojas.data.jpa.model.MessageJPA;
-import cl.injcristianrojas.data.jpa.model.repositories.MessageRepository;
+import cl.injcristianrojas.data.model.MessageJPA;
+import cl.injcristianrojas.data.repositories.MessageRepository;
 
 @Component
 public class InitialDataProvisioner implements ApplicationListener<ContextRefreshedEvent> {
