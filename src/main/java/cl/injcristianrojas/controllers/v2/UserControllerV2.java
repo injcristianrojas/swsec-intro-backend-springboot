@@ -1,11 +1,9 @@
 package cl.injcristianrojas.controllers.v2;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.h2.util.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import cl.injcristianrojas.data.model.UserJPA;
 import cl.injcristianrojas.data.repositories.UserRepository;
@@ -45,8 +41,7 @@ public class UserControllerV2 {
       Map<String, Object> map = new HashMap<>();
       map.put("token", jwtService.generateToken(authRequest.getUsername()));
       return map;
-    }
-    else
+    } else
       throw new UsernameNotFoundException("invalid user request!");
   }
 
