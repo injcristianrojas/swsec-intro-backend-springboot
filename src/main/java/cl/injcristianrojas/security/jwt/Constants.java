@@ -1,6 +1,6 @@
 package cl.injcristianrojas.security.jwt;
 
-import io.jsonwebtoken.SignatureAlgorithm;
+import com.auth0.jwt.algorithms.Algorithm;
 
 public class Constants {
 	
@@ -10,8 +10,9 @@ public class Constants {
     public static final String HEADER_STRING = "Authorization";
     public static final String LOGIN_URI = "/api/v2/login";
     
-    public static SignatureAlgorithm verificationAlgorithm() {
-    	return SignatureAlgorithm.HS256;
+    public static Algorithm verificationAlgorithm() {
+    	return Algorithm.HMAC256(SECRET);
     }
 
 }
+

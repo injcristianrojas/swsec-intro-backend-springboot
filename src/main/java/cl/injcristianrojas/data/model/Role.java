@@ -17,6 +17,10 @@ public class Role {
 
 	public String getName() {
 		return rolename;
+	
+	}
+	public String toString() {
+		return rolename;
 	}
 
 	public void setName(String name) {

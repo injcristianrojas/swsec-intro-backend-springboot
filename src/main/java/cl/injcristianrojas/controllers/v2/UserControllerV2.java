@@ -39,7 +39,7 @@ public class UserControllerV2 {
         .authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
     if (authentication.isAuthenticated()) {
       Map<String, Object> map = new HashMap<>();
-      map.put("token", jwtService.generateToken(authRequest.getUsername()));
+      map.put("token", jwtService.generateToken(authentication));
       return map;
     } else
       throw new UsernameNotFoundException("invalid user request!");

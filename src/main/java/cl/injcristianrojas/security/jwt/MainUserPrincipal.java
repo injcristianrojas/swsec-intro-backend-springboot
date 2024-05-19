@@ -22,6 +22,11 @@ public class MainUserPrincipal implements UserDetails {
         return user.getAuthorities();
     }
 
+    public String getMainRole() {
+        GrantedAuthority first = getAuthorities().iterator().next();
+        return first.toString();
+    }
+
     @Override
     public String getPassword() {
         return user.getPassword();
