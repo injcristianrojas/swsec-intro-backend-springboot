@@ -1,4 +1,4 @@
-package cl.injcristianrojas.service;
+package cl.injcristianrojas.security.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import cl.injcristianrojas.data.model.UserJPA;
 import cl.injcristianrojas.data.repositories.UserRepository;
-import cl.injcristianrojas.security.jwt.MainUserPrincipal;
 
 @Service
 public class MainUserDetailsService implements UserDetailsService {

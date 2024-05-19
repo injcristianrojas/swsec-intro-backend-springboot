@@ -21,7 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.cors.CorsConfiguration;
 
 import cl.injcristianrojas.security.jwt.JwtAuthenticationFilter;
-import cl.injcristianrojas.service.MainUserDetailsService;
+import cl.injcristianrojas.security.jwt.MainUserDetailsService;
 import jakarta.annotation.PostConstruct;
 
 @SuppressWarnings("deprecation")
