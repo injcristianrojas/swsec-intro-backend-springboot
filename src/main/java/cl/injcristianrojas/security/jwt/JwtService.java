@@ -2,6 +2,7 @@ package cl.injcristianrojas.security.jwt;
 
 import java.util.Date;
 
+import static cl.injcristianrojas.security.jwt.Constants.EXPIRATION_TIME_IN_SECONDS;
 import static cl.injcristianrojas.security.jwt.Constants.TOKEN_PREFIX;
 import static cl.injcristianrojas.security.jwt.Constants.verificationAlgorithm;
 
@@ -20,8 +21,8 @@ public class JwtService {
         return JWT.create()
                 .withSubject(principal.getUsername())
                 .withClaim("role", principal.getMainRole())
-                .withExpiresAt(new Date(System.currentTimeMillis() + Constants.EXPIRATION_TIME_IN_SECONDS))
-                .sign(Constants.verificationAlgorithm());
+                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_SECONDS))
+                .sign(verificationAlgorithm());
     }
 
     public String extractUserName(String token) {
