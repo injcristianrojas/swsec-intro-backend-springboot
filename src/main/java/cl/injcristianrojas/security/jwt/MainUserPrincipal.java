@@ -1,4 +1,4 @@
-package cl.injcristianrojas.security;
+package cl.injcristianrojas.security.jwt;
 
 
 import org.springframework.security.core.GrantedAuthority;

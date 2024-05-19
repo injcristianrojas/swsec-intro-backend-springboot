@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.injcristianrojas.data.model.UserJPA;
 import cl.injcristianrojas.data.repositories.UserRepository;
-import cl.injcristianrojas.security.JwtService;
+import cl.injcristianrojas.security.jwt.JwtService;
 
 @RestController
 @RequestMapping("/api/v2")

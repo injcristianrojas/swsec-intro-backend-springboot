@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import cl.injcristianrojas.data.model.UserJPA;
 import cl.injcristianrojas.data.repositories.UserRepository;
-import cl.injcristianrojas.security.MainUserPrincipal;
+import cl.injcristianrojas.security.jwt.MainUserPrincipal;
 
 @Service
 public class MainUserDetailsService implements UserDetailsService {
