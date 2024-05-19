@@ -18,13 +18,13 @@ public class UserRepositoryCustomImpl implements UserRepositoryCustom {
 
     @Override
     public List<UserJPA> getUsersByUsername(String username) {
-        TypedQuery<UserJPA> query = entityManager.createQuery("from User where username = '" + username + "'", UserJPA.class);
+        TypedQuery<UserJPA> query = entityManager.createQuery("from UserJPA where username = '" + username + "'", UserJPA.class);
         return query.getResultList();
     }
 
     @Override
     public List<UserJPA> getUsersByType(Long type) {
-        TypedQuery<UserJPA> query = entityManager.createQuery("from User where role.id = "+ type, UserJPA.class);
+        TypedQuery<UserJPA> query = entityManager.createQuery("from UserJPA where role.id = "+ type, UserJPA.class);
         return query.getResultList();
     }
 }
