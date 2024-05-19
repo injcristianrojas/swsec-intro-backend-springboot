@@ -20,7 +20,7 @@ springdoc:
   api-docs:
     path: /api-docs
   pathsToMatch:
-    - /api/v1/**
+    - /api/v2/**
 
 server:
   port: 9000
