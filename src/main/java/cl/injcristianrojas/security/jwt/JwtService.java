@@ -21,7 +21,7 @@ public class JwtService {
         return JWT.create()
                 .withSubject(principal.getUsername())
                 .withClaim("role", principal.getMainRole())
-                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_SECONDS))
+                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME_IN_SECONDS * 1000))
                 .sign(verificationAlgorithm());
     }
 
