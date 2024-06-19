@@ -17,8 +17,8 @@ public class Role {
 
 	public String getName() {
 		return rolename;
-	
 	}
+	
 	public String toString() {
 		return rolename;
 	}
