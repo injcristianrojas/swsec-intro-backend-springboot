@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import cl.injcristianrojas.data.model.UserDisplay;
 import cl.injcristianrojas.data.model.UserJPA;
+import cl.injcristianrojas.data.repositories.UserDisplayRepository;
 import cl.injcristianrojas.data.repositories.UserRepository;
 
 @RestController
@@ -16,10 +18,12 @@ public class UserControllerV2 {
 
   @Autowired
   private UserRepository userRepo;
+  @Autowired
+  private UserDisplayRepository userDisplayRepo;
 
   @GetMapping("/users")
-  public List<UserJPA> retrieveAllUsers() {
-    return userRepo.findAll();
+  public List<UserDisplay> retrieveAllUsers() {
+    return userDisplayRepo.findUsers();
   }
 
   @GetMapping("/users/user/{username}")
