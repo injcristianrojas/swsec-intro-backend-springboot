@@ -48,14 +48,13 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             request -> request
                 .requestMatchers("/healthcheck", "/healthcheck/**").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/h2/**", "/api/v1/**", "/api/v2/login", "/api-docs/**", "/swagger-ui/**")
                 .permitAll().anyRequest().authenticated())
         .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider()).addFilterBefore(
             jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
         .csrf(AbstractHttpConfigurer::disable)
-        .headers(
-            (headers) -> headers.frameOptions((frameOptions) -> frameOptions.disable()))
         .cors(
             cors -> cors.configurationSource(request -> {
               CorsConfiguration configuration = new CorsConfiguration();
