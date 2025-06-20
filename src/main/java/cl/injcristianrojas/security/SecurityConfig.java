@@ -47,10 +47,10 @@ public class SecurityConfig {
     http
         .authorizeHttpRequests(
             request -> request
-                .requestMatchers("/healthcheck", "/healthcheck/**").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
-                .requestMatchers("/h2/**", "/api/v1/**", "/api/v2/login", "/api-docs/**", "/swagger-ui/**")
-                .permitAll().anyRequest().authenticated())
+                .requestMatchers("/api/v2/login").permitAll()
+                .requestMatchers("/api/v2/**").authenticated()
+                .anyRequest().permitAll() 
+                )
         .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider()).addFilterBefore(
             jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
