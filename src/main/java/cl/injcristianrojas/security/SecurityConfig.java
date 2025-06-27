@@ -53,16 +53,7 @@ public class SecurityConfig {
                 )
         .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider()).addFilterBefore(
-            jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-        .csrf(AbstractHttpConfigurer::disable)
-        .cors(
-            cors -> cors.configurationSource(request -> {
-              CorsConfiguration configuration = new CorsConfiguration();
-              configuration.setAllowedOrigins(Arrays.asList("*"));
-              configuration.setAllowedMethods(Arrays.asList("*"));
-              configuration.setAllowedHeaders(Arrays.asList("*"));
-              return configuration;
-            }));
+            jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
     return http.build();
   }
