@@ -44,11 +44,11 @@ public class SecurityConfig {
             request -> request
                 .requestMatchers("/api/v2/login").permitAll()
                 .requestMatchers("/api/v2/**").authenticated()
-                .anyRequest().permitAll() 
-                )
+                .anyRequest().permitAll())
         .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authenticationProvider(authenticationProvider()).addFilterBefore(
-            jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+            jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+        .csrf(csrf -> csrf.disable());
 
     return http.build();
   }
